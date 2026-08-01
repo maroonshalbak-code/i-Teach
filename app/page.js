@@ -178,10 +178,10 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-3 mb-6">
               {[
-                { icon: '📖', action: 'Study a flashcard',    xp: '+10 XP' },
-                { icon: '🔊', action: 'Hear a pronunciation', xp: '+10 XP' },
-                { icon: '✅', action: 'Correct quiz answer',  xp: '+20 XP' },
-                { icon: '🏆', action: 'Complete a category',  xp: '+50 XP' },
+                { icon: '📖', action: 'Study a flashcard',       xp: '+5 XP' },
+                { icon: '🔊', action: 'Hear a pronunciation',    xp: '+2 XP' },
+                { icon: '✅', action: 'Each correct quiz answer', xp: '+10 XP' },
+                { icon: '🚀', action: 'Complete a phase',         xp: '+100 XP' },
               ].map((item) => (
                 <div key={item.action} className="flex items-center gap-4 bg-gray-50 rounded-2xl p-3">
                   <span className="text-2xl">{item.icon}</span>
