@@ -48,7 +48,7 @@ export default function ProgressPage() {
     <div className="p-5 pb-16">
       <button onClick={() => router.back()} className="text-gray-400 text-sm mb-4">← Back</button>
       <h1 className="text-2xl font-extrabold text-gray-900 mb-1">Your Progress</h1>
-      <p className="text-sm text-gray-400 mb-5">Phase {phase + 1} of {TOTAL_PHASES}</p>
+      <p className="text-sm text-gray-400 mb-5">Stage {phase + 1} of {TOTAL_PHASES}</p>
 
       {/* Summary stats */}
       <div className="grid grid-cols-3 gap-3 mb-5">
@@ -66,16 +66,16 @@ export default function ProgressPage() {
 
       {/* Phase overview bar */}
       <div className="bg-white rounded-2xl p-5 shadow-sm mb-5 text-center">
-        <p className="text-xs text-gray-400 font-semibold mb-2">Phase {phase + 1} Flashcards</p>
+        <p className="text-xs text-gray-400 font-semibold mb-2">Stage {phase + 1} Flashcards</p>
         <div className="text-5xl font-extrabold text-indigo-500 mb-3">{overallPct}%</div>
         <div className="h-3 bg-gray-100 rounded-full overflow-hidden mb-2">
           <div className="h-full bg-indigo-500 rounded-full transition-all" style={{ width: `${overallPct}%` }} />
         </div>
-        <p className="text-xs text-gray-400">{totalSeen} of {totalPossible} words seen this phase</p>
+        <p className="text-xs text-gray-400">{totalSeen} of {totalPossible} words seen this stage</p>
       </div>
 
       {/* By category */}
-      <h2 className="font-bold text-gray-900 mb-3">Phase {phase + 1} — By Category</h2>
+      <h2 className="font-bold text-gray-900 mb-3">Stage {phase + 1} — By Category</h2>
       <div className="flex flex-col gap-3 mb-5">
         {CATEGORIES.map((cat) => {
           const pct      = getCategoryProgress(progress, phase, cat.id);

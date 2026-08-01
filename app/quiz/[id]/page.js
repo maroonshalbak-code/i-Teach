@@ -107,7 +107,7 @@ export default function QuizPage() {
         <p className="text-gray-500 mb-6">You've already passed this quiz with a perfect score.</p>
         <div className="bg-green-50 border border-green-200 rounded-2xl px-6 py-4 mb-8 w-full max-w-sm">
           <p className="text-green-700 font-bold text-sm">🏆 Perfect score achieved</p>
-          <p className="text-green-600 text-xs mt-1">Complete the other categories to advance to the next phase.</p>
+          <p className="text-green-600 text-xs mt-1">Complete the other categories to advance to the next stage.</p>
         </div>
         <button
           onClick={() => { window.location.href = '/'; }}
@@ -128,13 +128,13 @@ export default function QuizPage() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center">
         <div className="text-8xl mb-4">🏆</div>
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Phase {phase + 1} Complete!</h2>
+        <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Stage {phase + 1} Complete!</h2>
         <p className="text-gray-500 mb-1">You finished all 6 categories!</p>
         <p className="text-indigo-500 font-bold text-lg mb-8">+100 Bonus XP 🎊</p>
         {phase < 99 ? (
           <>
             <div className="bg-indigo-50 rounded-3xl p-6 mb-6 w-full max-w-sm">
-              <p className="text-indigo-700 font-bold text-lg mb-1">Next: Phase {phase + 2}</p>
+              <p className="text-indigo-700 font-bold text-lg mb-1">Next: Stage {phase + 2}</p>
               <p className="text-indigo-500 text-sm">6 brand-new words per category await you!</p>
             </div>
             <button
@@ -142,12 +142,12 @@ export default function QuizPage() {
               disabled={advancing}
               className="w-full max-w-sm py-4 rounded-2xl bg-indigo-500 text-white font-bold text-lg disabled:opacity-60 mb-3"
             >
-              {advancing ? 'Advancing...' : `Start Phase ${phase + 2} →`}
+              {advancing ? 'Advancing...' : `Start Stage ${phase + 2} →`}
             </button>
           </>
         ) : (
           <div className="bg-yellow-50 rounded-3xl p-6 mb-6 w-full max-w-sm">
-            <p className="text-yellow-700 font-bold">🎓 You completed all 100 phases!</p>
+            <p className="text-yellow-700 font-bold">🎓 You completed all 100 stages!</p>
           </div>
         )}
         <button onClick={() => { window.location.href = '/'; }} className="text-gray-400 text-sm py-2">
@@ -221,7 +221,7 @@ export default function QuizPage() {
                 </div>
               )}
               {categoryComplete && (
-                <p className="text-green-600 text-xs">Phase {phase + 1} — {completedCount} / 6 categories done</p>
+                <p className="text-green-600 text-xs">Stage {phase + 1} — {completedCount} / 6 categories done</p>
               )}
             </div>
           )}
@@ -274,7 +274,7 @@ export default function QuizPage() {
     <div className="p-5 pb-10">
       <div className="flex items-center justify-between mb-2">
         <button onClick={() => router.back()} className="text-gray-400 text-sm">← Back</button>
-        <span className="text-xs font-bold px-3 py-1 rounded-full bg-gray-100 text-gray-500">Phase {phase + 1}</span>
+        <span className="text-xs font-bold px-3 py-1 rounded-full bg-gray-100 text-gray-500">Stage {phase + 1}</span>
       </div>
 
       <div className="flex items-center justify-between mb-2">

@@ -114,7 +114,7 @@ export default function LeaderboardPage() {
                   {firstName}
                   {isMe && <span className="text-indigo-500 font-semibold"> (You)</span>}
                 </p>
-                <p className="text-xs text-gray-400">Phase {entry.phase + 1}</p>
+                <p className="text-xs text-gray-400">Stage {entry.phase + 1}</p>
               </div>
 
               {/* XP badge */}

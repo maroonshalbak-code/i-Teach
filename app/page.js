@@ -83,8 +83,8 @@ export default function Home() {
       <div className="rounded-2xl p-4 mb-5 bg-indigo-500">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <p className="text-white/80 text-xs font-semibold">CURRENT PHASE</p>
-            <p className="text-white text-2xl font-extrabold">Phase {phase + 1} <span className="text-white/60 text-sm font-semibold">/ {TOTAL_PHASES}</span></p>
+            <p className="text-white/80 text-xs font-semibold">CURRENT STAGE</p>
+            <p className="text-white text-2xl font-extrabold">Stage {phase + 1} <span className="text-white/60 text-sm font-semibold">/ {TOTAL_PHASES}</span></p>
           </div>
           <div className="text-right">
             <p className="text-white/80 text-xs font-semibold">CATEGORIES</p>
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
         {phaseComplete && (
           <p className="text-white text-xs font-bold mt-2 text-center">
-            🏆 Phase complete! Finish the last quiz to advance →
+            🏆 Stage complete! Finish the last quiz to advance →
           </p>
         )}
       </div>
@@ -131,7 +131,7 @@ export default function Home() {
       </button>
 
       {/* Category grid */}
-      <h2 className="text-lg font-bold text-gray-900 mb-3">Phase {phase + 1} Topics</h2>
+      <h2 className="text-lg font-bold text-gray-900 mb-3">Stage {phase + 1} Topics</h2>
       <div className="grid grid-cols-2 gap-3">
         {CATEGORIES.map((cat) => {
           const pct      = progress ? getCategoryProgress(progress, phase, cat.id) : 0;
@@ -182,7 +182,7 @@ export default function Home() {
                 { icon: '📖', action: 'Study a flashcard',       xp: '+5 XP' },
                 { icon: '🔊', action: 'Hear a pronunciation',    xp: '+2 XP' },
                 { icon: '✅', action: 'Each correct quiz answer', xp: '+10 XP' },
-                { icon: '🚀', action: 'Complete a phase',         xp: '+100 XP' },
+                { icon: '🚀', action: 'Complete a stage',         xp: '+100 XP' },
               ].map((item) => (
                 <div key={item.action} className="flex items-center gap-4 bg-gray-50 rounded-2xl p-3">
                   <span className="text-2xl">{item.icon}</span>

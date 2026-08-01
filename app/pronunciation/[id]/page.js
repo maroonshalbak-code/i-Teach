@@ -62,7 +62,7 @@ export default function PronunciationPage() {
       <div className="flex items-center justify-between mb-4">
         <button onClick={() => router.back()} className="text-gray-400 text-sm">← Back</button>
         <span className="text-xs font-bold px-3 py-1 rounded-full bg-gray-100 text-gray-500">
-          Phase {phase + 1}
+          Stage {phase + 1}
         </span>
       </div>
 
