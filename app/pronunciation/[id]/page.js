@@ -88,7 +88,7 @@ export default function PronunciationPage() {
         style={{ borderColor: color + '30' }}
       >
         <div className="text-3xl font-extrabold mb-2" style={{ color }}>{word.word}</div>
-        <p className="text-gray-500 text-base font-semibold mb-1" dir="rtl">{word.arabicWord}</p>
+        <p className="text-gray-500 text-base font-semibold mb-1" dir="rtl">{word.arabic}</p>
         <p className="text-gray-400 text-sm" dir="rtl">{word.arabicDefinition}</p>
         {heardWords.has(index) && (
           <div className="mt-3 inline-block px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: color }}>

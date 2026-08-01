@@ -144,7 +144,7 @@ export default function FlashcardPage() {
               style={{ backgroundColor: color }}
             >
               <p className="text-white/70 text-xs font-semibold mb-1">بالعربية</p>
-              <p className="text-white text-2xl font-extrabold text-center mb-3" dir="rtl">{word.arabicWord}</p>
+              <p className="text-white text-2xl font-extrabold text-center mb-3" dir="rtl">{word.arabic}</p>
               <div className="w-16 h-px bg-white/30 mb-3" />
               <p className="text-white/70 text-xs font-semibold mb-1" dir="rtl">التعريف</p>
               <p className="text-white text-sm font-semibold text-center leading-6 mb-3" dir="rtl">{word.arabicDefinition}</p>
