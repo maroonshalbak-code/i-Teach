@@ -5,9 +5,9 @@ import { useParams, useRouter } from 'next/navigation';
 import { CATEGORIES } from '../../../lib/content';
 
 const ACTIVITIES = [
-  { id: 'flashcard', label: 'Flashcards', desc: 'Learn vocabulary with flip cards', emoji: '🃏' },
-  { id: 'pronunciation', label: 'Pronunciation', desc: 'Listen and practice speaking', emoji: '🎙️' },
-  { id: 'quiz', label: 'Quiz', desc: 'Test your knowledge', emoji: '📝' },
+  { id: 'flashcard',    label: 'Flashcards',    arabic: 'البطاقات التعليمية', desc: 'Learn vocabulary with flip cards', emoji: '🃏' },
+  { id: 'pronunciation', label: 'Pronunciation', arabic: 'النطق',              desc: 'Listen and practice speaking',    emoji: '🎙️' },
+  { id: 'quiz',         label: 'Quiz',           arabic: 'الاختبار',           desc: 'Test your knowledge',             emoji: '📝' },
 ];
 
 export default function CategoryPage() {
@@ -43,7 +43,10 @@ export default function CategoryPage() {
               {act.emoji}
             </div>
             <div className="flex-1">
-              <div className="font-bold text-gray-900">{act.label}</div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-gray-900">{act.label}</span>
+                <span className="text-sm text-gray-400" dir="rtl">{act.arabic}</span>
+              </div>
               <div className="text-sm text-gray-500 mt-0.5">{act.desc}</div>
             </div>
             <span className="text-gray-300 text-lg">›</span>
