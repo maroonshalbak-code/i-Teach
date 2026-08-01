@@ -11,6 +11,7 @@ export default function Home() {
   const { user, profile, loading } = useAuth();
   const router = useRouter();
   const [progress, setProgress] = useState(null);
+  const [showXPInfo, setShowXPInfo] = useState(false);
 
   useEffect(() => {
     if (!loading && !user) { router.push('/login'); return; }
@@ -52,9 +53,12 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-2">
           {progress && (
-            <div className="flex items-center gap-1 bg-gray-900 text-yellow-400 px-3 py-1.5 rounded-full text-sm font-bold">
+            <button
+              onClick={() => setShowXPInfo(true)}
+              className="flex items-center gap-1 bg-gray-900 text-yellow-400 px-3 py-1.5 rounded-full text-sm font-bold"
+            >
               ⚡ {progress.totalXP} XP
-            </div>
+            </button>
           )}
           <Link href="/profile">
             <div className="w-9 h-9 rounded-full bg-indigo-100 flex items-center justify-center overflow-hidden border-2 border-indigo-300">
@@ -157,6 +161,44 @@ export default function Home() {
           );
         })}
       </div>
+
+      {/* XP Info Modal */}
+      {showXPInfo && (
+        <div
+          className="fixed inset-0 bg-black/50 flex items-end justify-center z-50"
+          onClick={() => setShowXPInfo(false)}
+        >
+          <div
+            className="bg-white rounded-t-3xl p-6 w-full max-w-md"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center mb-4">
+              <div className="text-4xl mb-2">⚡</div>
+              <h2 className="text-xl font-extrabold text-gray-900">How to earn XP</h2>
+            </div>
+            <div className="flex flex-col gap-3 mb-6">
+              {[
+                { icon: '📖', action: 'Study a flashcard',    xp: '+10 XP' },
+                { icon: '🔊', action: 'Hear a pronunciation', xp: '+10 XP' },
+                { icon: '✅', action: 'Correct quiz answer',  xp: '+20 XP' },
+                { icon: '🏆', action: 'Complete a category',  xp: '+50 XP' },
+              ].map((item) => (
+                <div key={item.action} className="flex items-center gap-4 bg-gray-50 rounded-2xl p-3">
+                  <span className="text-2xl">{item.icon}</span>
+                  <span className="flex-1 text-sm font-semibold text-gray-700">{item.action}</span>
+                  <span className="text-sm font-bold text-yellow-500">{item.xp}</span>
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={() => setShowXPInfo(false)}
+              className="w-full py-3 bg-indigo-500 text-white font-bold rounded-2xl"
+            >
+              Got it!
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
