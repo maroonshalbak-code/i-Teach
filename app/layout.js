@@ -2,14 +2,14 @@ import './globals.css';
 import { AuthProvider } from '../lib/AuthContext';
 
 export const metadata = {
-  title: 'English Learn',
+  title: 'i-Teach',
   description: 'Learn English vocabulary, pronunciation and quizzes for pre-teens',
   manifest: '/manifest.json',
   themeColor: '#6C63FF',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'English Learn',
+    title: 'i-Teach',
   },
 };
 

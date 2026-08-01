@@ -55,8 +55,25 @@ export default function LoginPage() {
     <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-b from-indigo-500 to-purple-600">
       {/* Logo */}
       <div className="text-center mb-8">
-        <div className="text-6xl mb-3">📚</div>
-        <h1 className="text-3xl font-extrabold text-white">English Learn</h1>
+        <div className="flex items-center justify-center mb-3">
+          <div className="w-20 h-20 rounded-3xl bg-white/20 flex items-center justify-center shadow-lg">
+            <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Head */}
+              <circle cx="32" cy="16" r="10" fill="white"/>
+              {/* Graduation cap */}
+              <rect x="20" y="10" width="24" height="4" rx="2" fill="white" opacity="0.9"/>
+              <polygon points="32,4 44,10 32,12 20,10" fill="white"/>
+              <line x1="44" y1="10" x2="44" y2="16" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+              <circle cx="44" cy="17" r="1.5" fill="white"/>
+              {/* Body */}
+              <path d="M16 52 C16 40 48 40 48 52 L48 56 L16 56 Z" fill="white"/>
+              {/* Book */}
+              <rect x="24" y="36" width="16" height="12" rx="2" fill="white" opacity="0.7"/>
+              <line x1="32" y1="36" x2="32" y2="48" stroke="rgba(99,102,241,0.5)" strokeWidth="1.5"/>
+            </svg>
+          </div>
+        </div>
+        <h1 className="text-3xl font-extrabold text-white">i-Teach</h1>
         <p className="text-white/80 text-sm mt-1">Vocabulary · Pronunciation · Quizzes</p>
       </div>
 

@@ -1,6 +1,6 @@
 {
-  "name": "English Learn",
-  "short_name": "EnglishLearn",
+  "name": "i-Teach",
+  "short_name": "i-Teach",
   "description": "Learn English vocabulary, pronunciation and quizzes",
   "start_url": "/",
   "display": "standalone",
