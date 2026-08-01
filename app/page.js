@@ -152,7 +152,8 @@ export default function Home() {
                 </div>
               )}
               <div className="text-4xl mb-2">{cat.emoji}</div>
-              <div className="text-sm font-bold mb-3" style={{ color: cat.color }}>{cat.title}</div>
+              <div className="text-sm font-bold leading-tight" style={{ color: cat.color }}>{cat.title}</div>
+              <div className="text-xs text-gray-400 mb-3" dir="rtl">{cat.arabic}</div>
               <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden mb-1">
                 <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: cat.color }} />
               </div>

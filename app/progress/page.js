@@ -90,6 +90,7 @@ export default function ProgressPage() {
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <span className="font-bold text-gray-900 text-sm">{cat.title}</span>
+                    <span className="text-xs text-gray-400" dir="rtl">{cat.arabic}</span>
                     {complete && (
                       <span className="text-xs font-bold text-white px-2 py-0.5 rounded-full" style={{ backgroundColor: cat.color }}>
                         ✓ Done
