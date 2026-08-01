@@ -24,6 +24,7 @@ export default function CategoryPage() {
         <button onClick={() => router.back()} className="text-white/80 text-sm mb-4">← Back</button>
         <div className="text-4xl mb-2">{cat.emoji}</div>
         <h1 className="text-2xl font-extrabold text-white">{cat.title}</h1>
+        <p className="text-white/60 text-base font-semibold mt-0.5" dir="rtl">{cat.arabic}</p>
         <p className="text-white/80 text-sm mt-1">Choose an activity</p>
       </div>
 
