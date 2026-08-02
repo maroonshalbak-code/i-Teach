@@ -111,7 +111,7 @@ export default function RedeemPage() {
         <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Gift Redeemed!</h2>
         <p className="text-gray-500 mb-1">Your request has been submitted.</p>
         <div className="bg-indigo-50 rounded-2xl p-5 my-6 w-full max-w-sm">
-          <div className="text-4xl mb-2">{gift.emoji}</div>
+          <img src={gift.image} alt={gift.name} className="w-24 h-24 object-cover rounded-xl mx-auto mb-3" />
           <p className="font-extrabold text-gray-900">{gift.name}</p>
           <p className="text-xs text-gray-400 mt-1" dir="rtl">{gift.arabicName}</p>
           <p className="text-indigo-600 font-bold mt-3">- ⚡ {gift.xp} XP deducted</p>
@@ -151,7 +151,7 @@ export default function RedeemPage() {
         {passed ? (
           <div className="w-full max-w-sm">
             <div className="bg-indigo-50 rounded-2xl p-4 mb-6 flex items-center gap-4">
-              <span className="text-3xl">{gift.emoji}</span>
+              <img src={gift.image} alt={gift.name} className="w-14 h-14 object-cover rounded-xl flex-shrink-0" />
               <div className="text-left">
                 <p className="font-extrabold text-gray-900">{gift.name}</p>
                 <p className="text-yellow-500 font-bold text-sm">⚡ {gift.xp} XP</p>

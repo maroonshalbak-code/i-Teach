@@ -6,11 +6,15 @@ import { loadProgress, getLearnedWords } from '../../lib/progress';
 import { useAuth } from '../../lib/AuthContext';
 
 export const GIFTS = [
-  { id: 'stationery', name: 'Stationery Set',      arabicName: 'طقم قرطاسية',      emoji: '✏️', xp: 500,  desc: 'Pencils, pens, ruler & eraser' },
-  { id: 'storybook',  name: 'English Story Book',   arabicName: 'كتاب قصة إنجليزي', emoji: '📚', xp: 800,  desc: 'A fun illustrated story book' },
-  { id: 'artset',     name: 'Art & Coloring Set',   arabicName: 'طقم رسم وتلوين',   emoji: '🎨', xp: 1000, desc: 'Colors, markers & drawing pads' },
-  { id: 'boardgame',  name: 'Board Game',            arabicName: 'لعبة ألواح',        emoji: '🎲', xp: 1500, desc: 'A fun family board game' },
-  { id: 'backpack',   name: 'School Backpack',       arabicName: 'حقيبة مدرسية',     emoji: '🎒', xp: 2000, desc: 'A cool school backpack' },
+  { id: 'stickers',   name: 'Star Face Stickers',   arabicName: 'ملصقات نجوم',        image: '/gifts/stickers.jpg',   xp: 1000, desc: 'Colorful star stickers set' },
+  { id: 'basketball', name: 'Mini Basketball Game', arabicName: 'لعبة كرة السلة',     image: '/gifts/basketball.jpg', xp: 1500, desc: 'Desktop basketball shooting game' },
+  { id: 'keychain',   name: 'Six Seven Keychain',   arabicName: 'ميدالية مفاتيح',     image: '/gifts/keychain.jpg',   xp: 2000, desc: 'Colorful graffiti-style keychain' },
+  { id: 'stitch',     name: 'Stitch Stationery Set',arabicName: 'طقم قرطاسية ستيتش', image: '/gifts/stitch.jpg',     xp: 2500, desc: '6-piece Stitch themed school set' },
+  { id: 'pillow',     name: 'Travel Neck Pillow',   arabicName: 'وسادة رقبة سفر',     image: '/gifts/pillow.jpg',     xp: 3000, desc: 'Comfortable inflatable neck pillow' },
+  { id: 'dartboard',  name: 'Dart Board',           arabicName: 'لعبة السهام',        image: '/gifts/dartboard.jpg',  xp: 3500, desc: 'Sticky ball dart board game' },
+  { id: 'tosscatch',  name: 'Toss & Catch Set',     arabicName: 'لعبة التقاط الكرة', image: '/gifts/tosscatch.jpg',  xp: 4000, desc: 'Velcro paddle & ball game set' },
+  { id: 'jellyfish',  name: 'Jellyfish LED Lamp',   arabicName: 'مصباح قنديل البحر', image: '/gifts/jellyfish.jpg',  xp: 4500, desc: 'Glowing jellyfish aquarium lamp' },
+  { id: 'rgblamp',    name: 'RGB Lamp with Clock',  arabicName: 'مصباح ذكي بساعة',   image: '/gifts/rgblamp.jpg',    xp: 5000, desc: 'Color-changing smart lamp & clock' },
 ];
 
 export default function ShopPage() {
@@ -70,8 +74,8 @@ export default function ShopPage() {
               className={`bg-white rounded-2xl p-4 shadow-sm border-2 ${canAfford ? 'border-indigo-100' : 'border-gray-100'}`}
             >
               <div className="flex items-center gap-4">
-                <div className="text-4xl w-14 h-14 flex items-center justify-center bg-indigo-50 rounded-2xl flex-shrink-0">
-                  {gift.emoji}
+                <div className="w-16 h-16 rounded-2xl flex-shrink-0 overflow-hidden bg-gray-100">
+                  <img src={gift.image} alt={gift.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-extrabold text-gray-900">{gift.name}</p>
