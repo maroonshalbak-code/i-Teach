@@ -108,10 +108,13 @@ export default function Home() {
       {/* Nav */}
       <div className="flex gap-2 mb-3">
         <Link href="/progress" className="flex-1 text-center text-sm font-semibold text-indigo-600 bg-indigo-50 rounded-xl py-2">
-          📊 My Progress
+          📊 Progress
         </Link>
         <Link href="/leaderboard" className="flex-1 text-center text-sm font-semibold text-indigo-600 bg-indigo-50 rounded-xl py-2">
           🏆 Top 5
+        </Link>
+        <Link href="/shop" className="flex-1 text-center text-sm font-semibold text-indigo-600 bg-indigo-50 rounded-xl py-2">
+          🎁 Shop
         </Link>
         <Link href="/profile" className="flex-1 text-center text-sm font-semibold text-indigo-600 bg-indigo-50 rounded-xl py-2">
           👤 Profile
