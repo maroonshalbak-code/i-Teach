@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { CATEGORIES, TOTAL_PHASES } from '../lib/content';
-import { loadProgress, getCategoryProgress, isCategoryComplete, getCompletedCategoryCount } from '../lib/progress';
+import { loadProgress, getCategoryProgress, isCategoryComplete, getCompletedCategoryCount, advancePhase } from '../lib/progress';
 import { useAuth } from '../lib/AuthContext';
 
 export default function Home() {
@@ -12,6 +12,7 @@ export default function Home() {
   const router = useRouter();
   const [progress, setProgress] = useState(null);
   const [showXPInfo, setShowXPInfo] = useState(false);
+  const [advancing, setAdvancing] = useState(false);
 
   useEffect(() => {
     if (!loading && !user) { router.push('/login'); return; }
@@ -99,9 +100,17 @@ export default function Home() {
           />
         </div>
         {phaseComplete && (
-          <p className="text-white text-xs font-bold mt-2 text-center">
-            🏆 Stage complete! Finish the last quiz to advance →
-          </p>
+          <button
+            onClick={async () => {
+              setAdvancing(true);
+              await advancePhase(user.id);
+              window.location.href = '/';
+            }}
+            disabled={advancing}
+            className="w-full mt-2 py-2.5 rounded-xl bg-white text-indigo-600 font-bold text-sm disabled:opacity-60"
+          >
+            {advancing ? 'Advancing...' : `🏆 Advance to Stage ${phase + 2} →`}
+          </button>
         )}
       </div>
 
