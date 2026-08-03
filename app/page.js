@@ -142,6 +142,32 @@ export default function Home() {
         Invite a Friend on WhatsApp
       </button>
 
+      {/* Daily Challenge card */}
+      {progress && (() => {
+        const dc = progress.dailyChallenge;
+        const doneToday = dc?.lastDate === new Date().toISOString().split('T')[0];
+        return (
+          <Link href="/daily" className="block mb-5">
+            <div className={`rounded-2xl p-4 flex items-center gap-4 ${doneToday ? 'bg-gray-100' : 'bg-gradient-to-r from-yellow-400 to-orange-400'}`}>
+              <div className="text-3xl">⭐</div>
+              <div className="flex-1">
+                <p className={`font-extrabold text-sm ${doneToday ? 'text-gray-500' : 'text-white'}`}>Daily Challenge</p>
+                {doneToday ? (
+                  <p className="text-xs text-gray-400">Completed · {dc.score}/5 · Come back tomorrow!</p>
+                ) : (
+                  <p className="text-xs text-white/80">5 questions · up to +100 XP</p>
+                )}
+              </div>
+              {!doneToday && (
+                <div className="bg-white/20 rounded-xl px-3 py-1.5">
+                  <span className="text-white font-bold text-xs">Play →</span>
+                </div>
+              )}
+            </div>
+          </Link>
+        );
+      })()}
+
       {/* Category grid */}
       <h2 className="text-lg font-bold text-gray-900 mb-3">Stage {phase + 1} Topics</h2>
       <div className="grid grid-cols-2 gap-3">
