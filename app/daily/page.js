@@ -75,7 +75,8 @@ export default function DailyChallengePage() {
   const handleNext = async () => {
     const isLast = qIndex + 1 >= questions.length;
     if (isLast) {
-      const finalScore = answers.filter((a) => a.correct).length + (selected === question.answer ? 1 : 0);
+      // answers state already includes the current question's answer (set in handleSelect)
+      const finalScore = answers.filter((a) => a.correct).length;
       setSaving(true);
       await saveDailyChallenge(finalScore, user?.id);
       setSaving(false);
